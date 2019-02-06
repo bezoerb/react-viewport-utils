@@ -149,7 +149,7 @@ export default class ViewportCollector extends React.PureComponent<IProps> {
   private dimensionsState: IDimensions;
   private lastSyncedScrollState: IScroll;
   private lastSyncedDimensionsState: IDimensions;
-  private tickId: NodeJS.Timeout;
+  private tickId: number;
   private componentMightHaveUpdated: boolean;
   private resizeObserver: ResizeObserver | null;
 

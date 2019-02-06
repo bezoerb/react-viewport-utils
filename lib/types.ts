@@ -47,6 +47,14 @@ export interface IViewportChangeOptions {
   notifyOnlyWhenIdle: () => boolean;
   priority: () => PriorityType;
   recalculateLayoutBeforeUpdate?: (viewport: IViewport) => any;
+  displayName: () => string | undefined;
+  type:
+    | 'ObserveViewport'
+    | 'connectViewport'
+    | 'useScroll'
+    | 'useDimensions'
+    | 'useViewport'
+    | 'useLayoutSnapshot';
 }
 
 export interface IViewportCollectorUpdateOptions {

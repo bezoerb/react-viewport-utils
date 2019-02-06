@@ -1,6 +1,11 @@
 // @see https://gist.github.com/strothj/708afcf4f01dd04de8f49c92e88093c3
 interface Window {
   ResizeObserver: ResizeObserver;
+  requestIdleCallback: (
+    callback: (deadline: RequestIdleCallbackDeadline) => void,
+    opts?: RequestIdleCallbackOptions,
+  ) => RequestIdleCallbackHandle;
+  cancelIdleCallback: (handle: RequestIdleCallbackHandle) => void;
 }
 
 /**
@@ -65,3 +70,12 @@ interface DOMRectReadOnly {
 
   toJSON: () => any;
 }
+
+type RequestIdleCallbackHandle = any;
+type RequestIdleCallbackOptions = {
+  timeout: number;
+};
+type RequestIdleCallbackDeadline = {
+  readonly didTimeout: boolean;
+  timeRemaining: () => number;
+};

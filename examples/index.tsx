@@ -12,6 +12,7 @@ import {
 import StickyScrollUp from './StickyScrollUp';
 import Sticky from './Sticky';
 import StickyGroupProvider from './StickyGroup';
+import { DevTools } from '../dev-tools/lib/index'
 
 import './styles.css';
 
@@ -51,6 +52,7 @@ const DisplayViewport = React.memo(() => {
 class Example extends React.PureComponent<{}, { disabled: boolean }> {
   private container1: React.RefObject<any>;
   private container2: React.RefObject<any>;
+  private viewportRef: React.RefObject<ViewportProvider>;
 
   constructor(props) {
     super(props);
@@ -131,13 +133,16 @@ class Example extends React.PureComponent<{}, { disabled: boolean }> {
 }
 
 render(
-  <ViewportProvider experimentalSchedulerEnabled>
-    <main role="main">
-      <Example />
-      <Placeholder />
-      <Placeholder />
-      <Placeholder />
-    </main>
-  </ViewportProvider>,
+  <React.Fragment>
+    <DevTools />
+    <ViewportProvider experimentalSchedulerEnabled>
+      <main role="main">
+        <Example />
+        <Placeholder />
+        <Placeholder />
+        <Placeholder />
+      </main>
+    </ViewportProvider>
+  </React.Fragment>,
   document.getElementById('root'),
 );

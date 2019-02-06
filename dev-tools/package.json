@@ -1,0 +1,23 @@
+{
+  "name": "react-viewport-utils-dev-tools",
+  "version": "1.0.0",
+  "description": "Debugger for the react-viewport-utils library",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/garthenweb/react-viewport-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/garthenweb/react-viewport-utils/issues"
+  },
+  "author": "Jannick Garthen <jannick.garthen@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.27",
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "typescript": "^3.3.3333"
+  }
+}
